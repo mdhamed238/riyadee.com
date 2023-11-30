@@ -1,6 +1,7 @@
 import formsPlugin from '@tailwindcss/forms'
 import headlessuiPlugin from '@headlessui/tailwindcss'
 import { type Config } from 'tailwindcss'
+import colors from 'tailwindcss/colors'
 
 export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
@@ -21,6 +22,22 @@ export default {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     extend: {
+      colors: {
+        primary: colors.blue,
+        accent: {
+          '50': '#fcfaea',
+          '100': '#faf3c7',
+          '200': '#f6e492',
+          '300': '#f0ce54',
+          '400': '#eab725',
+          '500': '#daa018',
+          '600': '#b47611',
+          '700': '#965812',
+          '800': '#7d4716',
+          '900': '#6a3a19',
+          '950': '#3e1e0a',
+        },
+      },
       borderRadius: {
         '4xl': '2rem',
       },
