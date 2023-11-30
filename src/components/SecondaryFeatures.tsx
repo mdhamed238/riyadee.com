@@ -6,9 +6,9 @@ import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import screenshotContacts from '@/images/screenshots/contacts.png'
-import screenshotInventory from '@/images/screenshots/inventory.png'
-import screenshotProfitLoss from '@/images/screenshots/profit-loss.png'
+import imageSmarthome from '@/images/features2/smarthome.jpeg'
+import imageMaintenance from '@/images/features2/plomber.jpg'
+import imageGreenhome from '@/images/features2/greenhome.jpeg'
 
 interface Feature {
   name: React.ReactNode
@@ -20,12 +20,12 @@ interface Feature {
 
 const features: Array<Feature> = [
   {
-    name: 'Reporting',
-    summary: 'Stay on top of things with always up-to-date reporting features.',
+    name: 'Smart Home',
+    summary: 'Stay in control with always up-to-date smart home features.',
     description:
-      'We talked about reporting in the section above but we needed three items here, so mentioning it one more time for posterity.',
-    image: screenshotProfitLoss,
-    icon: function ReportingIcon() {
+      'Experience the core value of seamless living with our smart home features—stay connected, effortlessly in control, ensuring your space adapts and responds intuitively to your lifestyle.',
+    image: imageSmarthome,
+    icon: function SmartHomeIcon() {
       let id = useId()
       return (
         <>
@@ -54,13 +54,13 @@ const features: Array<Feature> = [
     },
   },
   {
-    name: 'Inventory',
+    name: 'Green home',
     summary:
-      'Never lose track of what’s in stock with accurate inventory tracking.',
+      'Embrace Eco-Living with Sustainable Innovations for a Greener Home.',
     description:
-      'We don’t offer this as part of our software but that statement is inarguably true. Accurate inventory tracking would help you for sure.',
-    image: screenshotInventory,
-    icon: function InventoryIcon() {
+      'Experience a harmonious blend of sustainability and intelligence as our green home solutions seamlessly integrate renewable technologies for a personalized, eco-conscious living space.',
+    image: imageGreenhome,
+    icon: function GreenHomeIcon() {
       return (
         <>
           <path
@@ -82,12 +82,11 @@ const features: Array<Feature> = [
     },
   },
   {
-    name: 'Contacts',
-    summary:
-      'Organize all of your contacts, service providers, and invoices in one place.',
+    name: 'Insurance and Maintenance',
+    summary: 'Tailored Maintenance Services with Expansion Potential.',
     description:
-      'This also isn’t actually a feature, it’s just some friendly advice. We definitely recommend that you do this, you’ll feel really organized and professional.',
-    image: screenshotContacts,
+      'Experience comprehensive home care—plumbing, electrical, HVAC, and carpentry. Explore options to expand services, adapting to evolving home requirements.',
+    image: imageMaintenance,
     icon: function ContactsIcon() {
       return (
         <>
@@ -207,7 +206,9 @@ function FeaturesDesktop() {
                 >
                   <div className="w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
                     <Image
-                      className="w-full"
+                      // className= "
+
+                      className="h-[25rem] w-full  object-cover"
                       src={feature.image}
                       alt=""
                       sizes="52.75rem"
@@ -234,11 +235,11 @@ export function SecondaryFeatures() {
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            Simplify everyday business tasks.
+            Simplify with Streamlined Home Solutions.
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Because you’d probably be a little confused if we suggested you
-            complicate your everyday business tasks instead.
+            Simplify Home Management with Comprehensive Care and Streamlined
+            Solutions. Effortless Living Made Possible.
           </p>
         </div>
         <FeaturesMobile />

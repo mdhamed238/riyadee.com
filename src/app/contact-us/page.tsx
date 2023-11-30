@@ -5,48 +5,41 @@ import { SelectField, TextField } from '@/components/Fields'
 import { Logo } from '@/components/Logo'
 import { SlimLayout } from '@/components/SlimLayout'
 import { type Metadata } from 'next'
+import { ContactLayout } from '@/components/ContactLayout'
 
 export const metadata: Metadata = {
-  title: 'Sign Up',
+  title: 'Contact Us',
 }
 
 export default function Register() {
   return (
-    <SlimLayout>
+    <ContactLayout>
       <div className="flex">
         <Link href="/" aria-label="Home">
           <Logo className="h-10 w-auto" />
         </Link>
       </div>
-      <h2 className="mt-20 text-lg font-semibold text-gray-900">
-        Get started for free
-      </h2>
+      <h2 className="mt-20 text-lg font-semibold text-gray-900">Contact Us</h2>
       <p className="mt-2 text-sm text-gray-700">
-        Already registered?{' '}
+        Please contact us directly at{' '}
         <Link
-          href="/login"
-          className="text-primary-600 font-medium hover:underline"
+          href="mailto:contact@riyadee.com"
+          className="font-medium text-primary-600 hover:underline"
         >
-          Sign in
+          contact@riyadee.com
         </Link>{' '}
-        to your account.
+        or through this form.
       </p>
       <form
         action="#"
         className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2"
       >
         <TextField
-          label="First name"
-          name="first_name"
+          className="col-span-full"
+          label="Name"
+          name="name"
           type="text"
-          autoComplete="given-name"
-          required
-        />
-        <TextField
-          label="Last name"
-          name="last_name"
-          type="text"
-          autoComplete="family-name"
+          autoComplete="name"
           required
         />
         <TextField
@@ -57,32 +50,25 @@ export default function Register() {
           autoComplete="email"
           required
         />
-        <TextField
-          className="col-span-full"
-          label="Password"
-          name="password"
-          type="password"
-          autoComplete="new-password"
-          required
-        />
+
         <SelectField
           className="col-span-full"
           label="How did you hear about us?"
           name="referral_source"
         >
-          <option>AltaVista search</option>
-          <option>Super Bowl commercial</option>
-          <option>Our route 34 city bus ad</option>
+          <option>Online search</option>
+          <option>Facebook</option>
+          <option>Tiktok</option>
           <option>The “Never Use This” podcast</option>
         </SelectField>
         <div className="col-span-full">
           <Button type="submit" variant="solid" color="blue" className="w-full">
             <span>
-              Sign up <span aria-hidden="true">&rarr;</span>
+              Submit <span aria-hidden="true">&rarr;</span>
             </span>
           </Button>
         </div>
       </form>
-    </SlimLayout>
+    </ContactLayout>
   )
 }

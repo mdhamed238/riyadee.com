@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     default: 'Riyadee - Construction made simple for regular people',
   },
   description:
-    'Most bookkeeping software is accurate, but hard to use. We make the opposite trade-off, and hope you don’t get audited.',
+    'Most construction services are accurate but lack flexibilty. We make the opposite trade-off, from Design to Completion, we’ve got you covered.',
 }
 
 const inter = Inter({

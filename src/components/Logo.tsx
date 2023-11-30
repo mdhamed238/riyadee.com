@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import logoRiyadee from '@/images/logos/logoriyada.png'
+import logoRiyadee from '@/images/logos/logo-riyada.png'
 
 export function Logo(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -12,7 +12,7 @@ export function Logo(props: React.ComponentPropsWithoutRef<'svg'>) {
         className="mr-1.5 object-cover"
       />
       <span className="text-lg font-bold text-slate-800">Riya</span>
-      <span className="text-primary-600 text-lg font-bold">dee</span>
+      <span className="text-lg font-bold text-primary-600">dee</span>
     </div>
     // <svg aria-hidden="true" viewBox="0 0 109 40" {...props}>
     //   <path

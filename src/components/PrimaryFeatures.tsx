@@ -4,81 +4,40 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
-
 import { Container } from '@/components/Container'
 import backgroundImage from '@/images/background-features.jpg'
+import archDesign from '@/images/features1/arch-design.jpg'
+import equipment from '@/images/features1/equipment.jpg'
+import materials from '@/images/features1//materials.jpg'
+import renovation from '@/images/features1/renovation.jpg'
 
 const features = [
   {
+    id: 'architectural-design',
     title: 'Architectural designs',
     description: 'Empower your vision with our comprehensive design services.',
-    utils: [
-      { title: 'Custom Design', desc: 'Tailor-made plans to suit your needs' },
-      {
-        title: 'Leading Design Offices',
-        desc: 'Choose from renowned design offices',
-      },
-      {
-        title: 'Interactive 3D Models',
-        desc: 'Visualize your project with detailed 3D models.',
-      },
-      {
-        title: 'Diverse Plan Models',
-        desc: 'Find the perfect plan that matches your vision.',
-      },
-    ],
+    image: archDesign,
   },
+
   {
+    id: 'construction-materials',
     title: 'Construction Materials',
     description:
       'Build with confidence using top-quality construction materials.',
-    utils: [
-      {
-        title: 'Basic Materials',
-        desc: 'From bricks and cement to iron and formwork.',
-      },
-      {
-        title: 'Finishing Touches',
-        desc: 'Paint, plumbing, electricity, and carpentry essentials.',
-      },
-      {
-        title: 'Hardware Selection',
-        desc: 'Everything from electrical outlets to pipes.',
-      },
-    ],
+    image: materials,
   },
   {
+    id: 'execution-and-monitoring',
     title: 'Execution and Monitoring',
     description:
       'Bring your vision to life with expert execution and seamless monitoring.',
-    utils: [
-      {
-        title: 'Renovation and Rehabilitation',
-        desc: 'Breathe new life into existing structures.',
-      },
-      {
-        title: 'Site Monitoring',
-        desc: 'Efficient coordination for smooth construction processes.',
-      },
-    ],
+    image: renovation,
   },
   {
+    id: 'equipment-rental',
     title: 'Equipment Rental',
     description: 'Power your project with the right equipment.',
-    utils: [
-      {
-        title: 'Excavation Equipment',
-        desc: 'Dig deep with powerful excavators and bulldozers for efficient earth-moving.',
-      },
-      {
-        title: 'Unloading Equipment',
-        desc: 'Swift transport made easy with reliable dump trucks and loaders.',
-      },
-      {
-        title: 'Handling Equipment',
-        desc: 'Elevate projects safely using cranes and versatile forklifts for efficiency.',
-      },
-    ],
+    image: equipment,
   },
 ]
 
@@ -106,7 +65,7 @@ export function PrimaryFeatures() {
     <section
       id="features"
       aria-label="Features for running your books"
-      className="bg-primary-600 relative overflow-hidden pb-28 pt-20 sm:py-32"
+      className="relative overflow-hidden bg-primary-600 pb-28 pt-20 sm:py-32"
     >
       <Image
         className="absolute left-1/2 top-1/2 max-w-none translate-x-[-44%] translate-y-[-42%]"
@@ -121,7 +80,7 @@ export function PrimaryFeatures() {
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
             Everything you need to construct your house.
           </h2>
-          <p className="text-primary-100 mt-6 text-lg tracking-tight">
+          <p className="mt-6 text-lg tracking-tight text-primary-100">
             Unlock a world of possibilities with our comprehensive services.
           </p>
         </div>
@@ -171,52 +130,55 @@ export function PrimaryFeatures() {
                   ))}
                 </Tab.List>
               </div>
-              <Tab.Panels className="lg:col-span-7">
+              <Tab.Panels className="lg:col-span-6">
                 {features.map((feature) => (
                   <Tab.Panel key={feature.title} unmount={false}>
-                    <div className="relative sm:px-6 lg:hidden">
-                      <div className="absolute -inset-x-4 bottom-[-4.25rem] top-[-6.5rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl" />
-                      <p className="relative mx-auto max-w-2xl text-base text-white sm:text-center">
-                        {feature.description}
-                      </p>
-                    </div>
-                    <div className="mt-10 h-[24rem] rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0">
-                      <ul className="flex flex-col items-start gap-8 p-8">
-                        {feature.utils.map((item, idx) => (
-                          <li key={idx} className="flex items-center gap-4">
-                            <div className="text-primary-600 flex h-12 w-12 items-center justify-center rounded-lg border">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className="h-6 w-6"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  d="M4.5 12.75l6 6 9-13.5"
-                                />
-                              </svg>
-                            </div>
-                            <div>
-                              <h4 className="text-lg font-semibold text-gray-800">
-                                {item.title}
-                              </h4>
-                              <p>{item.desc}</p>
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    {/* <Image
+                    <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
+                      <Image
                         className="w-full"
                         src={feature.image}
                         alt=""
                         priority
                         sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
-                      /> */}
+                      />
+                    </div>
+                    {/* <div className="mt-10 h-[30rem] rounded-xl bg-slate-50 p-8 shadow-xl shadow-blue-900/20 ring-1 ring-gray-200 sm:w-auto lg:mt-0  xl:p-10">
+                      <h3
+                        id={tier.title}
+                        className="text-lg font-semibold leading-8 text-gray-900"
+                      >
+                        {tier.title}
+                      </h3>
+                      <p className="mt-4 text-sm leading-6 text-gray-600">
+                        {tier.description}
+                      </p>
+                      <p className="mt-6 flex items-baseline gap-x-1">
+                        <span className="text-4xl font-bold tracking-tight text-gray-900">
+                          Custom
+                        </span>
+                      </p>
+                      <a
+                        href={'https://wa.me/41439048'}
+                        target="_blank"
+                        className="mt-6 block rounded-md bg-primary-600 px-3 py-2 text-center text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+                      >
+                        Contact Sales
+                      </a>
+                      <ul
+                        role="list"
+                        className="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10"
+                      >
+                        {tier.features.map((feature) => (
+                          <li key={feature} className="flex gap-x-3">
+                            <CheckIcon
+                              className="h-6 w-5 flex-none text-primary-600"
+                              aria-hidden="true"
+                            />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div> */}
                   </Tab.Panel>
                 ))}
               </Tab.Panels>

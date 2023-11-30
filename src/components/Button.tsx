@@ -12,11 +12,15 @@ const variantStyles = {
   solid: {
     slate:
       'bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900',
+    primary:
+      'bg-primary-900 text-white hover:bg-primary-700 hover:text-primary-100 active:bg-primary-800 active:text-primary-300 focus-visible:outline-primary-900',
     blue: 'bg-primary-600 text-white hover:text-slate-100 hover:bg-primary-500 active:bg-primary-800 active:text-primary-100 focus-visible:outline-blue-600',
     white:
       'bg-white text-slate-900 hover:bg-primary-50 active:bg-primary-200 active:text-slate-600 focus-visible:outline-white',
   },
   outline: {
+    primary:
+      'ring-primary-200 text-primary-700 hover:text-primary-900 hover:ring-primary-300 active:bg-primary-100 active:text-primary-600 focus-visible:outline-blue-600 focus-visible:ring-primary-300',
     slate:
       'ring-slate-200 text-slate-700 hover:text-slate-900 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-blue-600 focus-visible:ring-slate-300',
     white:
