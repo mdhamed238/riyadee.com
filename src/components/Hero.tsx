@@ -2,12 +2,7 @@ import Image from 'next/image'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-// import logoLaravel from '@/images/logos/laravel.svg'
-// import logoMirage from '@/images/logos/mirage.svg'
-// import logoStatamic from '@/images/logos/statamic.svg'
-// import logoStaticKit from '@/images/logos/statickit.svg'
-// import logoTransistor from '@/images/logos/transistor.svg'
-// import logoTuple from '@/images/logos/tuple.svg'
+import { BsFacebook, BsTiktok, BsWhatsapp } from 'react-icons/bs'
 
 export function Hero() {
   return (
@@ -46,6 +41,29 @@ export function Hero() {
           </svg>
           <span className="ml-3">Watch video</span>
         </Button>
+        <div className="flex items-center ">
+          <a
+            className="borderBlack flex cursor-pointer items-center gap-2 rounded-full p-2 text-xl text-gray-700 transition hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105"
+            href="#"
+            target="_blank"
+          >
+            <BsFacebook />
+          </a>
+          <a
+            className="borderBlack flex cursor-pointer items-center gap-2 rounded-full p-2 text-xl text-gray-700 transition hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105"
+            href="#"
+            target="_blank"
+          >
+            <BsWhatsapp />
+          </a>
+          <a
+            className="borderBlack flex cursor-pointer items-center gap-2 rounded-full p-2 text-xl text-gray-700 transition hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105 "
+            href="#"
+            target="_blank"
+          >
+            <BsTiktok />
+          </a>
+        </div>
       </div>
       {/* <div className="mt-36 lg:mt-44">
         <p className="font-display text-base text-slate-900">
