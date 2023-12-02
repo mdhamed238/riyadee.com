@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import {
   Html,
@@ -10,24 +9,22 @@ import {
   Preview,
   Section,
   Text,
-  Column,
 } from '@react-email/components'
 import { Tailwind } from '@react-email/tailwind'
 
 type ContactFormEmailProps = {
   senderName: string
   senderEmail: string
-  senderPhone: string
+  referralSource: string
   message: string
-  services: string[]
+  // services: string[]
 }
 
 export default function ContactFormEmail({
   senderName,
   senderEmail,
-  senderPhone,
-  message,
-  services,
+  referralSource,
+  message, // services,
 }: ContactFormEmailProps) {
   return (
     <Html>
@@ -44,8 +41,9 @@ export default function ContactFormEmail({
               <Hr />
               <Text>The sender’s name is: {senderName}</Text>
               <Text>The sender’s email is: {senderEmail}</Text>
-              <Text>The sender’s phone is: {senderPhone}</Text>
-              <Hr />
+              <Text>The sender’s referral source is: {referralSource}</Text>
+              {/* <Text>The sender’s phone is: {senderPhone}</Text> */}
+              {/* <Hr />
               <Text className="text-lg font-semibold">Services: </Text>
               <Column className="py-3">
                 {services.map((service) => (
@@ -53,7 +51,7 @@ export default function ContactFormEmail({
                     {service}
                   </Text>
                 ))}
-              </Column>
+              </Column> */}
             </Section>
           </Container>
         </Body>

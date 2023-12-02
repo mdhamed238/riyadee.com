@@ -40,7 +40,7 @@ export default function RootLayout({
         lexend.variable,
       )}
     >
-      <body className="flex h-full flex-col">
+      <body className="flex h-full flex-col" suppressHydrationWarning={true}>
         {children}
         <Toaster position="top-right" />
       </body>

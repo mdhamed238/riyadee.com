@@ -1,28 +1,28 @@
+'use server'
+
 import React from 'react'
 import { Resend } from 'resend'
 import { validateString, getErrorMessage } from '@/lib/utils'
 import ContactFormEmail from '@/email/contact-form-email'
+import { FormValues } from '../../type'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+function setupResend() {
+  const apiKey = process.env.RESEND_API_KEY
 
-export const sendEmail = async (formData: FormData) => {
-  const senderName = formData.get('senderName')
-  const senderEmail = formData.get('senderEmail')
-  const senderPhone = formData.get('senderPhone')
-  const services = formData.get('services')
-  const message = formData.get('message')
-
-  // simple server-side validation
-  if (!validateString(senderEmail, 500)) {
-    return {
-      error: 'Invalid sender email',
-    }
+  // Check if the API key is present
+  if (!apiKey) {
+    throw new Error(
+      'Missing RESEND_API_KEY. Please set the API key in your environment.',
+    )
   }
-  if (!validateString(message, 5000)) {
-    return {
-      error: 'Invalid message',
-    }
-  }
+
+  const resend = new Resend(apiKey)
+  return resend
+}
+
+export const sendEmail = async (formData: FormValues) => {
+  const { name, email, message, referral_source } = formData
+  const resend = setupResend()
 
   let data
   try {
@@ -30,16 +30,16 @@ export const sendEmail = async (formData: FormData) => {
       from: 'Contact Form <onboarding@resend.dev>',
       to: 'contact@riyadee.com',
       subject: 'Message from Riyada website contact form',
-      reply_to: senderEmail,
+      reply_to: email,
       react: React.createElement(ContactFormEmail, {
         message: message,
-        senderName: senderName,
-        senderEmail: senderEmail,
-        senderPhone: senderPhone,
-        services: services,
+        senderName: name,
+        senderEmail: email,
+        referralSource: referral_source,
       }),
     })
   } catch (error: unknown) {
+    console.error(error)
     return {
       error: getErrorMessage(error),
     }
