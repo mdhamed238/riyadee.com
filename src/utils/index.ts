@@ -44,3 +44,16 @@ const tiers = [
     ],
   },
 ]
+
+export const smartHomePricing = {
+  title: 'Smart home',
+  description:
+    'Tailor your smart home experience with seamless control and personalized living through our innovative IntelliLiving Hub solutions.',
+  price: '4900',
+}
+export const greenHomePricing = {
+  title: 'Green home',
+  description:
+    'Tailor your smart home experience with seamless control and personalized living through our innovative IntelliLiving Hub solutions.',
+  price: '4900',
+}

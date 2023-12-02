@@ -3,11 +3,12 @@ import clsx from 'clsx'
 
 import '@/styles/tailwind.css'
 import { type Metadata } from 'next'
+import { Toaster } from 'react-hot-toast'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Riyadee',
-    default: 'Riyadee - Construction made simple for regular people',
+    template: '%s - Riyada',
+    default: 'Riyada - Construction made simple for regular people',
   },
   description:
     'Most construction services are accurate but lack flexibilty. We make the opposite trade-off, from Design to Completion, we’ve got you covered.',
@@ -39,7 +40,10 @@ export default function RootLayout({
         lexend.variable,
       )}
     >
-      <body className="flex h-full flex-col">{children}</body>
+      <body className="flex h-full flex-col">
+        {children}
+        <Toaster position="top-right" />
+      </body>
     </html>
   )
 }

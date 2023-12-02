@@ -9,6 +9,7 @@ import { Container } from '@/components/Container'
 import imageSmarthome from '@/images/features2/smarthome.jpeg'
 import imageMaintenance from '@/images/features2/plomber.jpg'
 import imageGreenhome from '@/images/features2/greenhome.jpeg'
+import { Button } from './Button'
 
 interface Feature {
   name: React.ReactNode
@@ -206,9 +207,7 @@ function FeaturesDesktop() {
                 >
                   <div className="w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
                     <Image
-                      // className= "
-
-                      className="h-[25rem] w-full  object-cover"
+                      className="h-[25rem] w-full object-cover"
                       src={feature.image}
                       alt=""
                       sizes="52.75rem"
@@ -229,13 +228,13 @@ export function SecondaryFeatures() {
   return (
     <section
       id="secondary-features"
-      aria-label="Features for simplifying everyday business tasks"
+      aria-label="Features for streamlined home solutions"
       className="pb-14 pt-20 sm:pb-20 sm:pt-32 lg:pb-32"
     >
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            Simplify with Streamlined Home Solutions.
+            Simplify with our Home Solutions.
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
             Simplify Home Management with Comprehensive Care and Streamlined

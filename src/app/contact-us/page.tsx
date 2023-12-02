@@ -5,12 +5,25 @@ import { SelectField, TextField } from '@/components/Fields'
 import { Logo } from '@/components/Logo'
 import { type Metadata } from 'next'
 import { ContactLayout } from '@/components/ContactLayout'
+import { sendEmail } from '@/services/sendEmail'
+import toast from 'react-hot-toast'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
 }
 
-export default function Register() {
+export default function ContactUs() {
+  // const onSubmit = async (formData: FormData) => {
+  //   // const { data, error } = await sendEmail(formData)
+  //   // if (error) {
+  //   //   process.env.NODE_ENV === 'development'
+  //   //     ? toast.error(error)
+  //   //     : toast.error('Could not send email!')
+  //   //   return
+  //   // }
+  //   // toast.success('Email sent successfully!')
+  //   return
+  // }
   return (
     <ContactLayout>
       <div className="flex">
@@ -30,7 +43,7 @@ export default function Register() {
         or through this form.
       </p>
       <form
-        action="#"
+        action={''}
         className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2"
       >
         <TextField
@@ -58,7 +71,7 @@ export default function Register() {
           <option>Online search</option>
           <option>Facebook</option>
           <option>Tiktok</option>
-          <option>The “Never Use This” podcast</option>
+          <option>Friend</option>
         </SelectField>
         <div className="col-span-full">
           <Button type="submit" variant="solid" color="blue" className="w-full">

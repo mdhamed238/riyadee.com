@@ -1,7 +1,15 @@
+'use client'
 import clsx from 'clsx'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
+import { Tab } from '@headlessui/react'
+import { useState } from 'react'
+import { classNames } from '@/utils'
+import InsuranceAndMaintenance from './InsuranceAndMaintenance'
+import SmartHome from './SmartHome'
+import GreenHome from './GreenHome'
+import SinglePricing from './SinglePricing'
 
 function SwirlyDoodle(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -20,7 +28,7 @@ function SwirlyDoodle(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function CheckIcon({
+export function CheckIcon({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<'svg'>) {
@@ -112,6 +120,36 @@ function Plan({
 }
 
 export function Pricing() {
+  let [tabs] = useState<{ [key: string]: () => JSX.Element }>({
+    'Smart Home': () => (
+      <SinglePricing
+        title="Smart Home"
+        description={`Tailor your smart home experience with seamless control and personalized living through our innovative Smart Home solutions.`}
+        features={[
+          'Centralized Control Hub',
+          'Intelligent Automation',
+          'Remote Access',
+          'Security Integration',
+        ]}
+        price="129,000"
+      />
+    ),
+    'Green Home': () => (
+      <SinglePricing
+        title="Green Home"
+        description={`Discover a cleaner, healthier lifestyle with our Green Home Solutions, integrating cutting-edge technologies for an Eco-conscious living space.`}
+        features={[
+          'Optimum Solar Panel Placement',
+          'Solar Energy Integration',
+          'Efficient Energy Utilization',
+          'Battery Storage Integration',
+        ]}
+        price="179,000"
+      />
+    ),
+
+    'Insurance and Maintainance': InsuranceAndMaintenance,
+  })
   return (
     <section
       id="pricing"
@@ -128,54 +166,83 @@ export function Pricing() {
             for everyone.
           </h2>
           <p className="mt-4 text-lg text-slate-400">
-            It doesn’t matter what size your business is, our software won’t
-            work well for you.
+            It doesn’t matter what size your home is; we ensure optimal care and
+            innovation for you.
           </p>
         </div>
-        <div className="-mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-3 xl:mx-0 xl:gap-x-8">
-          <Plan
-            name="Starter"
-            price="$9"
-            description="Good for anyone who is self-employed and just getting started."
-            href="/contact-us"
-            features={[
-              'Send 10 quotes and invoices',
-              'Connect up to 2 bank accounts',
-              'Track up to 15 expenses per month',
-              'Manual payroll support',
-              'Export up to 3 reports',
-            ]}
-          />
-          <Plan
-            featured
-            name="Small business"
-            price="$15"
-            description="Perfect for small / medium sized businesses."
-            href="/contact-us"
-            features={[
-              'Send 25 quotes and invoices',
-              'Connect up to 5 bank accounts',
-              'Track up to 50 expenses per month',
-              'Automated payroll support',
-              'Export up to 12 reports',
-              'Bulk reconcile transactions',
-              'Track in multiple currencies',
-            ]}
-          />
-          <Plan
-            name="Enterprise"
-            price="$39"
-            description="For even the biggest enterprise companies."
-            href="/contact-us"
-            features={[
-              'Send unlimited quotes and invoices',
-              'Connect up to 15 bank accounts',
-              'Track up to 200 expenses per month',
-              'Automated payroll support',
-              'Export up to 25 reports, including TPS',
-            ]}
-          />
-        </div>
+        <Tab.Group>
+          <Tab.List className="mt-16 flex space-x-1 rounded-xl bg-primary-900/20 p-1">
+            {Object.keys(tabs).map((tab) => (
+              <Tab
+                key={tab}
+                className={({ selected }) =>
+                  classNames(
+                    'w-full rounded-lg py-2.5 text-sm font-medium leading-5',
+                    'ring-white/60 ring-offset-2 ring-offset-primary-400 focus:outline-none focus:ring-2',
+                    selected
+                      ? 'bg-white text-primary-700 shadow'
+                      : 'text-primary-100 hover:bg-white/[0.12] hover:text-white',
+                  )
+                }
+              >
+                {tab}
+              </Tab>
+            ))}
+          </Tab.List>
+          <Tab.Panels>
+            {Object.values(tabs).map((PricingTab, index) => {
+              return (
+                <Tab.Panel key={index}>
+                  <PricingTab />
+                </Tab.Panel>
+              )
+            })}
+            {/* <div className="-mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-3 xl:mx-0 xl:gap-x-8">
+            <Plan
+              name="Starter"
+              price="$9"
+              description="Good for anyone who is self-employed and just getting started."
+              href="/contact-us"
+              features={[
+                'Send 10 quotes and invoices',
+                'Connect up to 2 bank accounts',
+                'Track up to 15 expenses per month',
+                'Manual payroll support',
+                'Export up to 3 reports',
+              ]}
+            />
+            <Plan
+              featured
+              name="Small business"
+              price="$15"
+              description="Perfect for small / medium sized businesses."
+              href="/contact-us"
+              features={[
+                'Send 25 quotes and invoices',
+                'Connect up to 5 bank accounts',
+                'Track up to 50 expenses per month',
+                'Automated payroll support',
+                'Export up to 12 reports',
+                'Bulk reconcile transactions',
+                'Track in multiple currencies',
+              ]}
+            />
+            <Plan
+              name="Enterprise"
+              price="$39"
+              description="For even the biggest enterprise companies."
+              href="/contact-us"
+              features={[
+                'Send unlimited quotes and invoices',
+                'Connect up to 15 bank accounts',
+                'Track up to 200 expenses per month',
+                'Automated payroll support',
+                'Export up to 25 reports, including TPS',
+              ]}
+            />
+          </div> */}
+          </Tab.Panels>
+        </Tab.Group>
       </Container>
     </section>
   )

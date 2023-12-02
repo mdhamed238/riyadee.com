@@ -1,18 +1,18 @@
 import Image from 'next/image'
-import logoRiyadee from '@/images/logos/logo-riyada.png'
+import logoRiyada from '@/images/logos/logo-riyada.png'
 
 export function Logo(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <div className="flex items-center">
+    <div className="flex select-none items-center">
       <Image
-        src={logoRiyadee}
+        src={logoRiyada}
         alt="Logo"
         height={60}
         width={60}
         className="mr-1.5 object-cover"
       />
-      <span className="text-lg font-bold text-slate-800">Riya</span>
-      <span className="text-lg font-bold text-primary-600">dee</span>
+      <span className="text-lg font-bold text-slate-800">Riy</span>
+      <span className="text-lg font-bold text-primary-600">ada</span>
     </div>
     // <svg aria-hidden="true" viewBox="0 0 109 40" {...props}>
     //   <path
