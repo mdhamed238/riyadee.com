@@ -7,8 +7,6 @@ import { Tab } from '@headlessui/react'
 import { useState } from 'react'
 import { classNames } from '@/utils'
 import InsuranceAndMaintenance from './InsuranceAndMaintenance'
-import SmartHome from './SmartHome'
-import GreenHome from './GreenHome'
 import SinglePricing from './SinglePricing'
 
 function SwirlyDoodle(props: React.ComponentPropsWithoutRef<'svg'>) {

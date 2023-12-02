@@ -9,7 +9,6 @@ import { Container } from '@/components/Container'
 import imageSmarthome from '@/images/features2/smarthome.jpeg'
 import imageMaintenance from '@/images/features2/plomber.jpg'
 import imageGreenhome from '@/images/features2/greenhome.jpeg'
-import { Button } from './Button'
 
 interface Feature {
   name: React.ReactNode
