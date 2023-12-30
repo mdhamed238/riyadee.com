@@ -8,7 +8,7 @@ import toast from 'react-hot-toast'
 import * as yup from 'yup'
 import { FormProvider, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { FormValues } from '../../../../type'
+import { FormValues } from '../../../type'
 
 // export const metadata: Metadata = {
 //   title: 'Contact Us',
