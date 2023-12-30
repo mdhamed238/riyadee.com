@@ -109,12 +109,10 @@ export function SelectField({
   name,
   label,
   className,
-  options,
   ...props
 }: Omit<React.ComponentPropsWithoutRef<'select'>, 'id'> & {
   label: string
   name: string
-  options: Array<string>
 }) {
   let id = useId()
   const { control, register } = useFormContext()
@@ -123,7 +121,7 @@ export function SelectField({
     <Controller
       name={name}
       control={control}
-      defaultValue={options[0]}
+      defaultValue={''}
       render={({ field, fieldState: { error } }) => (
         <div className={className}>
           {label && <Label id={id}>{label}</Label>}
@@ -139,11 +137,7 @@ export function SelectField({
                 ? 'border-red-500 focus:border-red-600 focus:ring-red-600'
                 : '',
             )}
-          >
-            {options.map((opt) => (
-              <option value={opt}>{opt}</option>
-            ))}
-          </select>
+          />
           {/* {error?.message && (
             <span className="mt-1 text-sm font-medium text-red-500">
               {error?.message}

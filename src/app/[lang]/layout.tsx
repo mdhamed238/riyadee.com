@@ -4,9 +4,6 @@ import clsx from 'clsx'
 import '@/styles/tailwind.css'
 import { type Metadata } from 'next'
 import { Toaster } from 'react-hot-toast'
-import { Locale, defaultLocale } from '../../../i18n.config'
-import { ClerkProvider } from '@clerk/nextjs'
-import { arSA, frFR, enUS } from '@clerk/localizations'
 import { Analytics } from '@vercel/analytics/react'
 export const metadata: Metadata = {
   title: {
@@ -37,25 +34,18 @@ export default function RootLayout({
   params: { lang: Locale }
 }) {
   return (
-    <ClerkProvider
-      localization={
-        params.lang === 'en' ? enUS : params.lang === 'fr' ? frFR : arSA
-      }
+    <html
+      className={clsx(
+        'h-full scroll-smooth bg-white antialiased',
+        inter.variable,
+        lexend.variable,
+      )}
     >
-      <html
-        lang={params.lang ?? defaultLocale}
-        className={clsx(
-          'h-full scroll-smooth bg-white antialiased',
-          inter.variable,
-          lexend.variable,
-        )}
-      >
-        <body className="flex h-full flex-col" suppressHydrationWarning={true}>
-          {children}
-          <Analytics />
-          <Toaster position="top-right" />
-        </body>
-      </html>
-    </ClerkProvider>
+      <body className="flex h-full flex-col" suppressHydrationWarning={true}>
+        {children}
+        <Analytics />
+        <Toaster position="top-right" />
+      </body>
+    </html>
   )
 }

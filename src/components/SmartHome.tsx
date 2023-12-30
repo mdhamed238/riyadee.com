@@ -21,7 +21,7 @@ export default function SmartHome() {
           solutions.
         </p>
         <div className="mt-10 flex items-center gap-x-4">
-          <h4 className="flex-none text-sm font-semibold leading-6 text-primary-600">
+          <h4 className="flex-none text-sm font-semibold leading-6 text-indigo-600">
             What’s included
           </h4>
           <div className="h-px flex-auto bg-gray-100" />
@@ -33,7 +33,7 @@ export default function SmartHome() {
           {includedFeatures.map((feature) => (
             <li key={feature} className="flex gap-x-3">
               <CheckIcon
-                className="h-6 w-5 flex-none text-primary-600"
+                className="h-6 w-5 flex-none text-indigo-600"
                 aria-hidden="true"
               />
               {feature}
@@ -57,7 +57,7 @@ export default function SmartHome() {
             </p>
             <a
               href="#"
-              className="mt-10 block w-full rounded-md bg-primary-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+              className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Get started
             </a>
