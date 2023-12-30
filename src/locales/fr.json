@@ -1,0 +1,41 @@
+{
+  "header": {
+    "cta1": "commencer",
+    "cta2": "aujourd'hui",
+    "navigation": ["Caractéristiques", "Prix"]
+  },
+  "hero": {
+    "headline1": "Construction",
+    "headline2": "simplifiée",
+    "headline3": "pour les gens ordinaires",
+    "subheadline": "La plupart des services de construction sont précis mais manquent de flexibilité. Nous faisons le compromis inverse, de la conception à la réalisation, nous avons ce qu’il vous faut."
+  },
+  "primaryfeatures": {
+    "headline": "Tout ce dont vous avez besoin pour construire votre maison.",
+    "subheadline": "Découvrez un monde de possibilités grâce à nos services complets.",
+    "features": [
+      {
+        "title": "Conceptions architecturales",
+        "description": "Autonomiser votre vision avec nos services de conception complets."
+      },
+
+      {
+        "title": "Matériaux de construction",
+        "description": "Construisez avec confiance en utilisant des matériaux de construction de qualité supérieure."
+      },
+      {
+        "title": "Exécution et suivi",
+        "description": "Donnez vie à votre vision avec une exécution experte et une suivi transparente."
+      },
+      {
+        "title": "Location d'équipement",
+        "description": "Alimentez votre projet avec le bon équipement. "
+      }
+    ]
+  },
+  "footer": {
+    "copyright1": "Copyright",
+    "copyright2": "Riyada. Tous droits réservés.",
+    "navigation": ["Caractéristiques", "Prix"]
+  }
+}

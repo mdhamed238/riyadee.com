@@ -1,0 +1,41 @@
+{
+  "header": {
+    "cta1": "Get started",
+    "cta2": "today",
+    "navigation": ["Features", "Pricing"]
+  },
+  "hero": {
+    "headline1": "Construction",
+    "headline2": "made simple",
+    "headline3": "for regular people",
+    "subheadline": "Most construction services are accurate but lack flexibility. We make the opposite trade-off, from Design to Completion, we’ve got you covered."
+  },
+  "primaryfeatures": {
+    "headline": "Everything you need to construct your house.",
+    "subheadline": "Unlock a world of possibilities with our comprehensive services.",
+    "features": [
+      {
+        "title": "Architectural designs",
+        "description": "Empower your vision with our comprehensive design services."
+      },
+
+      {
+        "title": "Construction Materials",
+        "description": "Build with confidence using top-quality construction materials."
+      },
+      {
+        "title": "Execution and Monitoring",
+        "description": "Bring your vision to life with expert execution and seamless monitoring."
+      },
+      {
+        "title": "Equipment Rental",
+        "description": "Power your project with the right equipment."
+      }
+    ]
+  },
+  "footer": {
+    "copyright1": "Copyright",
+    "copyright2": "Riyada. All rights reserved.",
+    "navigation": ["Features", "Pricing"]
+  }
+}

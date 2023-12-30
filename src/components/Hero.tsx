@@ -1,8 +1,5 @@
-import Image from 'next/image'
-
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import { BsFacebook, BsTiktok, BsWhatsapp } from 'react-icons/bs'
 
 export function Hero() {
   return (
@@ -23,8 +20,9 @@ export function Hero() {
         for regular people.
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-        Most construction services are accurate but lack flexibilty. We make the
-        opposite trade-off, from Design to Completion, we’ve got you covered.
+        Most construction services are accurate but lack flexibility. We make
+        the opposite trade-off, from Design to Completion, we’ve got you
+        covered.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
         <Button href="/contact-us">Start building</Button>
